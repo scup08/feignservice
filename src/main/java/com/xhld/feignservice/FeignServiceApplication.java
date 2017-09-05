@@ -2,15 +2,15 @@ package com.xhld.feignservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableEurekaClient
 @EnableFeignClients
-public class ServiceFeignApplication {
+public class FeignServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceFeignApplication.class, args);
+        SpringApplication.run(FeignServiceApplication.class, args);
     }
 }

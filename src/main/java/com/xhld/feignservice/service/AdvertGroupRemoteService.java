@@ -6,14 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.xhld.feignservice.model.AdvertGroupVO;
-
-
 @FeignClient(name = "ea")  //  [A]
 public interface AdvertGroupRemoteService {
 
     @RequestMapping(value = "/group/{groupId}", method = RequestMethod.GET) // [B]
-    AdvertGroupVO findByGroupId(@PathVariable("groupId") Integer adGroupId); // [C]
+    String findByGroupId(@PathVariable("groupId") Integer adGroupId); // [C]
 
     @RequestMapping(value = "/group/{groupId}", method = RequestMethod.PUT)
     void update(@PathVariable("groupId") Integer groupId, @RequestParam("groupName") String groupName);
